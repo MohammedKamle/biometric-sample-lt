@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 
 public class SampleTest {
 
-    String userName = System.getenv("LT_USERNAME") == null ? "mohammadk" : System.getenv("LT_USERNAME");
-    String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "gkrzT0iFKjDjehXpMTznxM1lHIZXSYjV3H8Ntk0s2rCUJJO3WU" : System.getenv("LT_ACCESS_KEY");
+    String userName = System.getenv("LT_USERNAME") == null ? "your_username" : System.getenv("LT_USERNAME");
+    String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "your_access_key" : System.getenv("LT_ACCESS_KEY");
 
     public String gridURL = "@mobile-hub.lambdatest.com/wd/hub";
 
@@ -28,7 +28,7 @@ public class SampleTest {
             ltOptions.put("platformName", "ios");
             ltOptions.put("deviceName", "iPhone.*");
             ltOptions.put("platformVersion", "16");
-            ltOptions.put("app", "lt://APP10160531951700650605624458");
+            ltOptions.put("app", "<YOUR_APP_ID>");
             ltOptions.put("isRealMobile", true);
             ltOptions.put("build", "biometric-sample");
             ltOptions.put("enableBiometricsAuthentication", true);
@@ -44,7 +44,7 @@ public class SampleTest {
             Thread.sleep(3000);
 
             // passing the authentication
-            //driver.executeScript("lambda-biometric-injection=pass");
+            driver.executeScript("lambda-biometric-injection=pass");
 
             driver.quit();
 
